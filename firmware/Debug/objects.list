@@ -4,6 +4,7 @@
 "./Core/Src/syscalls.o"
 "./Core/Src/sysmem.o"
 "./Core/Src/system_stm32f4xx.o"
+"./Core/Src/uart_input.o"
 "./Core/Startup/startup_stm32f401retx.o"
 "./Drivers/SSD1306/Src/ssd1306.o"
 "./Drivers/SSD1306/Src/ssd1306_fonts.o"
