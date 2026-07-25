@@ -1,5 +1,6 @@
-../Core/Src/uart_input.c:39:6:UART_InputInit	1
-../Core/Src/uart_input.c:45:6:UART_InputClear	1
-../Core/Src/uart_input.c:51:9:UART_InputProcess	2
-../Core/Src/uart_input.c:64:26:UART_InputReceiveCharacter	3
-../Core/Src/uart_input.c:74:16:UART_InputProcessCharcter	8
+../Core/Src/uart_input.c:27:6:UART_InputInit	1
+../Core/Src/uart_input.c:33:6:UART_InputClear	1
+../Core/Src/uart_input.c:39:9:UART_InputProcess	2
+../Core/Src/uart_input.c:52:26:UART_InputReceiveCharacter	3
+../Core/Src/uart_input.c:62:16:UART_InputProcessCharcter	10
+../Core/Src/uart_input.c:106:14:UART_InputGetText	1

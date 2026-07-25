@@ -15,4 +15,6 @@ void UART_InputInit(UART_HandleTypeDef *huart);
 void UART_InputClear(void);
 uint8_t UART_InputProcess(void);
 
+const char * UART_InputGetText(void);
+
 #endif /* INC_UART_INPUT_H_ */

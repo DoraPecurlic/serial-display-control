@@ -24,6 +24,7 @@
 /* USER CODE BEGIN Includes */
 #include <string.h>
 #include "uart_input.h"
+#include "display_controller.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -97,6 +98,7 @@ int main(void)
   MX_USART2_UART_Init();
   /* USER CODE BEGIN 2 */
   UART_InputInit(&huart2);
+  Display_Init();
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -104,7 +106,12 @@ int main(void)
   while (1)
   {
     /* USER CODE END WHILE */
-	  UART_InputProcess();
+	  if(UART_InputProcess() != 0U) //PROVJERAVA JEL STIGAO ZNAK
+	  {
+		  Display_ShowText(UART_InputGetText());
+
+		  UART_InputClear();
+	  }
     /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */

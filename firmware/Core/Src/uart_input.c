@@ -3,18 +3,6 @@
  *
  *  Created on: Jul 24, 2026
  *      Author: Dora_
- */
-
-/* Ovaj modul handla sami uart upis, odnosno primanje znakova
- *
- *
- * prima jedan po jedan znak
- * sprema ih u buffer
- * vraća ih u puty kao echo_
- * obraduje backspace
- * pazi da korisnik ne unese vise od 21 znaka
- * prepoznaje enter
- * omogucava dohvacanje i brisanje teksta
  *
  * */
 #include "uart_input.h"
@@ -22,7 +10,7 @@
 
 
 /* Macro -------------------------------------------------------------*/
-#define UART_INPUT_MAX_TEXT_LENGTH 21U
+#define UART_INPUT_MAX_TEXT_LENGTH 15U
 
 /* Private variables ---------------------------------------------------------*/
 static UART_HandleTypeDef *uartHandle = NULL; //jer svaka  HAL funkcija ocekuje pokazivac bas a ne kopiju
@@ -74,10 +62,15 @@ static HAL_StatusTypeDef UART_InputReceiveCharacter(uint8_t *receivedCharacter)
 static uint8_t UART_InputProcessCharcter(uint8_t receivedCharacter)
 {
 	//AKO JE ENTER - ZAVRSI TEKST I VRATI 1
-	if(receivedCharacter == '\r')
+	if(receivedCharacter == '\r' || receivedCharacter == '\n')
 	{
+		if (inputIndex == 0U)
+		{
+		   return 0U;
+		}
+
 		inputBuffer[inputIndex] = '\0';
-		UART_InputClear();
+
 		HAL_UART_Transmit(uartHandle, newLine, sizeof(newLine)-1U, HAL_MAX_DELAY);
 
 		return 1U;
@@ -108,4 +101,9 @@ static uint8_t UART_InputProcessCharcter(uint8_t receivedCharacter)
 
 	return 0U;
 
+}
+
+const char * UART_InputGetText(void)
+{
+	return inputBuffer;
 }

@@ -1,4 +1,7 @@
-Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
+Core/Src/display_controller.o: ../Core/Src/display_controller.c \
+ ../Core/Inc/display_controller.h \
+ D:/STM32_Projects/serial-display-control/firmware/Drivers/SSD1306/Inc/ssd1306.h \
+ D:/STM32_Projects/serial-display-control/firmware/Drivers/SSD1306/Inc/ssd1306_conf.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h \
  ../Core/Inc/stm32f4xx_hal_conf.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h \
@@ -27,8 +30,11 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h \
- ../Core/Inc/uart_input.h ../Core/Inc/display_controller.h
-../Core/Inc/main.h:
+ D:/STM32_Projects/serial-display-control/firmware/Drivers/SSD1306/Inc/ssd1306_fonts.h \
+ D:/STM32_Projects/serial-display-control/firmware/Drivers/SSD1306/Inc/ssd1306.h
+../Core/Inc/display_controller.h:
+D:/STM32_Projects/serial-display-control/firmware/Drivers/SSD1306/Inc/ssd1306.h:
+D:/STM32_Projects/serial-display-control/firmware/Drivers/SSD1306/Inc/ssd1306_conf.h:
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:
 ../Core/Inc/stm32f4xx_hal_conf.h:
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h:
@@ -57,5 +63,5 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h:
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h:
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h:
-../Core/Inc/uart_input.h:
-../Core/Inc/display_controller.h:
+D:/STM32_Projects/serial-display-control/firmware/Drivers/SSD1306/Inc/ssd1306_fonts.h:
+D:/STM32_Projects/serial-display-control/firmware/Drivers/SSD1306/Inc/ssd1306.h:
