@@ -5,7 +5,7 @@ class SerialConnection:
         self._port = port
         self._baud_rate = baud_rate
         self._timeout = timeout
-        self._serial = self.Serial | None = None
+        self._serial: serial.Serial | None = None
 
     @property
     def is_connected(self) -> bool:
@@ -17,7 +17,7 @@ class SerialConnection:
             return
 
         try:
-            self._serial = self.Serial(
+            self._serial = serial.Serial(
                 port = self._port,
                 baudrate =self._baud_rate,
                 parity = serial.PARITY_NONE,
