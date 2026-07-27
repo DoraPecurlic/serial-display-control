@@ -11,7 +11,7 @@ def main() -> None:
         time.sleep(2)
         print(f"Connected to port {SERIAL_PORT} at baudrate 115200.")
 
-        connection.send_line("HelloFromDora123456789")
+        connection.send_line("Hello to KANNN")
         print("Message sent successfully")
 
     except ConnectionError as error:
