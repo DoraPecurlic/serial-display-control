@@ -1,4 +1,5 @@
 import serial
+import time
 
 class SerialConnection:
     def __init__(self, port: str, baud_rate: int = 115200, timeout: float = 1.0) -> None: #konstrukzot
@@ -25,7 +26,7 @@ class SerialConnection:
                 bytesize = serial.EIGHTBITS,
                 timeout = self._timeout
             ) #8n1 format
-
+            
         except serial.SerialException as error:
             self._serial = None
 
@@ -38,3 +39,17 @@ class SerialConnection:
 
         self._serial.close()
         self._serial = None
+
+    def send_line(self, message: str) -> None:
+        if self.is_connected == False:
+            raise ConnectionError("Serial Connection is not opened.")
+        
+        message_to_display = message + "\r"
+        message_to_display_encoded = message_to_display.encode("ascii") # stm ocekuje bajtove a ne string pa mu se pretvori sve u bajtove, utf-8 podrzava i palatale
+
+        for byte in message_to_display_encoded:
+            self._serial.write(bytes([byte]))
+            self._serial.flush()
+            time.sleep(0.01)
+
+        

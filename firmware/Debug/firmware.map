@@ -878,7 +878,7 @@ Discarded input sections
  .debug_macro   0x00000000       0x2a ./Drivers/SSD1306/Src/ssd1306.o
  .debug_macro   0x00000000       0x43 ./Drivers/SSD1306/Src/ssd1306.o
  .debug_macro   0x00000000       0x34 ./Drivers/SSD1306/Src/ssd1306.o
- .debug_macro   0x00000000       0x34 ./Drivers/SSD1306/Src/ssd1306.o
+ .debug_macro   0x00000000       0x3a ./Drivers/SSD1306/Src/ssd1306.o
  .debug_macro   0x00000000      0x29b ./Drivers/SSD1306/Src/ssd1306.o
  .debug_macro   0x00000000       0x28 ./Drivers/SSD1306/Src/ssd1306.o
  .debug_macro   0x00000000       0x28 ./Drivers/SSD1306/Src/ssd1306.o
@@ -979,9 +979,15 @@ Discarded input sections
                 0x00000000      0x5f0 ./Drivers/SSD1306/Src/ssd1306_fonts.o
  .rodata.Font16x24
                 0x00000000     0x11d0 ./Drivers/SSD1306/Src/ssd1306_fonts.o
+ .rodata.Font16x15
+                0x00000000      0xb22 ./Drivers/SSD1306/Src/ssd1306_fonts.o
+ .rodata.char_width
+                0x00000000       0x5f ./Drivers/SSD1306/Src/ssd1306_fonts.o
  .rodata.Font_6x8
                 0x00000000        0xc ./Drivers/SSD1306/Src/ssd1306_fonts.o
  .rodata.Font_16x24
+                0x00000000        0xc ./Drivers/SSD1306/Src/ssd1306_fonts.o
+ .rodata.Font_16x15
                 0x00000000        0xc ./Drivers/SSD1306/Src/ssd1306_fonts.o
  .debug_macro   0x00000000      0xad8 ./Drivers/SSD1306/Src/ssd1306_fonts.o
  .debug_macro   0x00000000      0x190 ./Drivers/SSD1306/Src/ssd1306_fonts.o
@@ -995,7 +1001,7 @@ Discarded input sections
  .debug_macro   0x00000000       0x2a ./Drivers/SSD1306/Src/ssd1306_fonts.o
  .debug_macro   0x00000000       0x43 ./Drivers/SSD1306/Src/ssd1306_fonts.o
  .debug_macro   0x00000000       0x34 ./Drivers/SSD1306/Src/ssd1306_fonts.o
- .debug_macro   0x00000000       0x34 ./Drivers/SSD1306/Src/ssd1306_fonts.o
+ .debug_macro   0x00000000       0x3a ./Drivers/SSD1306/Src/ssd1306_fonts.o
  .debug_macro   0x00000000      0x29b ./Drivers/SSD1306/Src/ssd1306_fonts.o
  .debug_macro   0x00000000       0x28 ./Drivers/SSD1306/Src/ssd1306_fonts.o
  .debug_macro   0x00000000       0x28 ./Drivers/SSD1306/Src/ssd1306_fonts.o
@@ -3772,7 +3778,7 @@ LOAD C:/ST/STM32CubeIDE_2.1.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.exte
 .iplt           0x0800321c        0x0
  .iplt          0x0800321c        0x0 C:/ST/STM32CubeIDE_2.1.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.14.3.rel1.win32_1.0.100.202602081740/tools/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb/v7e-m+fp/hard/crtbegin.o
 
-.rodata         0x0800321c      0xba8
+.rodata         0x0800321c      0x790
                 0x0800321c                        . = ALIGN (0x4)
  *(.rodata)
  *(.rodata*)
@@ -3782,60 +3788,56 @@ LOAD C:/ST/STM32CubeIDE_2.1.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.exte
  .rodata.APBPrescTable
                 0x0800322c        0x8 ./Core/Src/system_stm32f4xx.o
                 0x0800322c                APBPrescTable
- .rodata.Font16x15
-                0x08003234      0xb22 ./Drivers/SSD1306/Src/ssd1306_fonts.o
- *fill*         0x08003d56        0x2 
- .rodata.char_width
-                0x08003d58       0x5f ./Drivers/SSD1306/Src/ssd1306_fonts.o
- *fill*         0x08003db7        0x1 
- .rodata.Font_16x15
-                0x08003db8        0xc ./Drivers/SSD1306/Src/ssd1306_fonts.o
-                0x08003db8                Font_16x15
-                0x08003dc4                        . = ALIGN (0x4)
+ .rodata.Font7x10
+                0x08003234      0x76c ./Drivers/SSD1306/Src/ssd1306_fonts.o
+ .rodata.Font_7x10
+                0x080039a0        0xc ./Drivers/SSD1306/Src/ssd1306_fonts.o
+                0x080039a0                Font_7x10
+                0x080039ac                        . = ALIGN (0x4)
 
-.ARM.extab      0x08003dc4        0x0
-                0x08003dc4                        . = ALIGN (0x4)
+.ARM.extab      0x080039ac        0x0
+                0x080039ac                        . = ALIGN (0x4)
  *(.ARM.extab* .gnu.linkonce.armextab.*)
-                0x08003dc4                        . = ALIGN (0x4)
+                0x080039ac                        . = ALIGN (0x4)
 
-.ARM            0x08003dc4        0x8
-                0x08003dc4                        . = ALIGN (0x4)
-                0x08003dc4                        __exidx_start = .
+.ARM            0x080039ac        0x8
+                0x080039ac                        . = ALIGN (0x4)
+                0x080039ac                        __exidx_start = .
  *(.ARM.exidx*)
- .ARM.exidx     0x08003dc4        0x8 C:/ST/STM32CubeIDE_2.1.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.14.3.rel1.win32_1.0.100.202602081740/tools/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb/v7e-m+fp/hard\libgcc.a(_udivmoddi4.o)
-                0x08003dcc                        __exidx_end = .
-                0x08003dcc                        . = ALIGN (0x4)
+ .ARM.exidx     0x080039ac        0x8 C:/ST/STM32CubeIDE_2.1.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.14.3.rel1.win32_1.0.100.202602081740/tools/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb/v7e-m+fp/hard\libgcc.a(_udivmoddi4.o)
+                0x080039b4                        __exidx_end = .
+                0x080039b4                        . = ALIGN (0x4)
 
-.preinit_array  0x08003dcc        0x0
-                0x08003dcc                        . = ALIGN (0x4)
-                0x08003dcc                        PROVIDE (__preinit_array_start = .)
+.preinit_array  0x080039b4        0x0
+                0x080039b4                        . = ALIGN (0x4)
+                0x080039b4                        PROVIDE (__preinit_array_start = .)
  *(.preinit_array*)
-                0x08003dcc                        PROVIDE (__preinit_array_end = .)
-                0x08003dcc                        . = ALIGN (0x4)
+                0x080039b4                        PROVIDE (__preinit_array_end = .)
+                0x080039b4                        . = ALIGN (0x4)
 
-.init_array     0x08003dcc        0x4
-                0x08003dcc                        . = ALIGN (0x4)
-                0x08003dcc                        PROVIDE (__init_array_start = .)
+.init_array     0x080039b4        0x4
+                0x080039b4                        . = ALIGN (0x4)
+                0x080039b4                        PROVIDE (__init_array_start = .)
  *(SORT_BY_NAME(.init_array.*))
  *(.init_array*)
- .init_array    0x08003dcc        0x4 C:/ST/STM32CubeIDE_2.1.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.14.3.rel1.win32_1.0.100.202602081740/tools/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb/v7e-m+fp/hard/crtbegin.o
-                0x08003dd0                        PROVIDE (__init_array_end = .)
-                0x08003dd0                        . = ALIGN (0x4)
+ .init_array    0x080039b4        0x4 C:/ST/STM32CubeIDE_2.1.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.14.3.rel1.win32_1.0.100.202602081740/tools/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb/v7e-m+fp/hard/crtbegin.o
+                0x080039b8                        PROVIDE (__init_array_end = .)
+                0x080039b8                        . = ALIGN (0x4)
 
-.fini_array     0x08003dd0        0x4
-                0x08003dd0                        . = ALIGN (0x4)
+.fini_array     0x080039b8        0x4
+                0x080039b8                        . = ALIGN (0x4)
                 [!provide]                        PROVIDE (__fini_array_start = .)
  *(SORT_BY_NAME(.fini_array.*))
  *(.fini_array*)
- .fini_array    0x08003dd0        0x4 C:/ST/STM32CubeIDE_2.1.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.14.3.rel1.win32_1.0.100.202602081740/tools/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb/v7e-m+fp/hard/crtbegin.o
+ .fini_array    0x080039b8        0x4 C:/ST/STM32CubeIDE_2.1.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.14.3.rel1.win32_1.0.100.202602081740/tools/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb/v7e-m+fp/hard/crtbegin.o
                 [!provide]                        PROVIDE (__fini_array_end = .)
-                0x08003dd4                        . = ALIGN (0x4)
-                0x08003dd4                        _sidata = LOADADDR (.data)
+                0x080039bc                        . = ALIGN (0x4)
+                0x080039bc                        _sidata = LOADADDR (.data)
 
-.rel.dyn        0x08003dd4        0x0
- .rel.iplt      0x08003dd4        0x0 C:/ST/STM32CubeIDE_2.1.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.14.3.rel1.win32_1.0.100.202602081740/tools/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb/v7e-m+fp/hard/crtbegin.o
+.rel.dyn        0x080039bc        0x0
+ .rel.iplt      0x080039bc        0x0 C:/ST/STM32CubeIDE_2.1.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.14.3.rel1.win32_1.0.100.202602081740/tools/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb/v7e-m+fp/hard/crtbegin.o
 
-.data           0x20000000       0x14 load address 0x08003dd4
+.data           0x20000000       0x14 load address 0x080039bc
                 0x20000000                        . = ALIGN (0x4)
                 0x20000000                        _sdata = .
  *(.data)
@@ -3859,11 +3861,11 @@ LOAD C:/ST/STM32CubeIDE_2.1.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.exte
  *fill*         0x20000011        0x3 
                 0x20000014                        _edata = .
 
-.igot.plt       0x20000014        0x0 load address 0x08003de8
+.igot.plt       0x20000014        0x0 load address 0x080039d0
  .igot.plt      0x20000014        0x0 C:/ST/STM32CubeIDE_2.1.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.14.3.rel1.win32_1.0.100.202602081740/tools/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb/v7e-m+fp/hard/crtbegin.o
                 0x20000014                        . = ALIGN (0x4)
 
-.bss            0x20000014      0x4dc load address 0x08003de8
+.bss            0x20000014      0x4dc load address 0x080039d0
                 0x20000014                        _sbss = .
                 0x20000014                        __bss_start__ = _sbss
  *(.bss)
@@ -3892,7 +3894,7 @@ LOAD C:/ST/STM32CubeIDE_2.1.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.exte
                 0x200004f0                        __bss_end__ = _ebss
 
 ._user_heap_stack
-                0x200004f0      0x600 load address 0x08003de8
+                0x200004f0      0x600 load address 0x080039d0
                 0x200004f0                        . = ALIGN (0x8)
                 [!provide]                        PROVIDE (end = .)
                 0x200004f0                        PROVIDE (_end = .)
@@ -3962,7 +3964,7 @@ LOAD C:/ST/STM32CubeIDE_2.1.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.exte
 LOAD C:/ST/STM32CubeIDE_2.1.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.14.3.rel1.win32_1.0.100.202602081740/tools/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libm.a
 LOAD C:/ST/STM32CubeIDE_2.1.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.14.3.rel1.win32_1.0.100.202602081740/tools/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb/v7e-m+fp/hard\libgcc.a
 
-.debug_info     0x00000000     0xb708
+.debug_info     0x00000000     0xb747
  .debug_info    0x00000000      0x1e3 ./Core/Src/display_controller.o
  .debug_info    0x000001e3      0xd5e ./Core/Src/main.o
  .debug_info    0x00000f41      0xc3a ./Core/Src/stm32f4xx_hal_msp.o
@@ -3971,15 +3973,15 @@ LOAD C:/ST/STM32CubeIDE_2.1.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.exte
  .debug_info    0x000021cb      0x757 ./Core/Src/uart_input.o
  .debug_info    0x00002922       0x30 ./Core/Startup/startup_stm32f401retx.o
  .debug_info    0x00002952     0x129e ./Drivers/SSD1306/Src/ssd1306.o
- .debug_info    0x00003bf0      0x1ed ./Drivers/SSD1306/Src/ssd1306_fonts.o
- .debug_info    0x00003ddd      0x8bb ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.o
- .debug_info    0x00004698      0xcf6 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.o
- .debug_info    0x0000538e      0x6f9 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.o
- .debug_info    0x00005a87     0x2426 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2c.o
- .debug_info    0x00007ead      0x905 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.o
- .debug_info    0x000087b2     0x2f56 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.o
+ .debug_info    0x00003bf0      0x22c ./Drivers/SSD1306/Src/ssd1306_fonts.o
+ .debug_info    0x00003e1c      0x8bb ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.o
+ .debug_info    0x000046d7      0xcf6 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.o
+ .debug_info    0x000053cd      0x6f9 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.o
+ .debug_info    0x00005ac6     0x2426 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2c.o
+ .debug_info    0x00007eec      0x905 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.o
+ .debug_info    0x000087f1     0x2f56 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.o
 
-.debug_abbrev   0x00000000     0x1ca0
+.debug_abbrev   0x00000000     0x1cb1
  .debug_abbrev  0x00000000      0x12b ./Core/Src/display_controller.o
  .debug_abbrev  0x0000012b      0x25d ./Core/Src/main.o
  .debug_abbrev  0x00000388      0x1ac ./Core/Src/stm32f4xx_hal_msp.o
@@ -3988,13 +3990,13 @@ LOAD C:/ST/STM32CubeIDE_2.1.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.exte
  .debug_abbrev  0x000006c1      0x1e6 ./Core/Src/uart_input.o
  .debug_abbrev  0x000008a7       0x24 ./Core/Startup/startup_stm32f401retx.o
  .debug_abbrev  0x000008cb      0x351 ./Drivers/SSD1306/Src/ssd1306.o
- .debug_abbrev  0x00000c1c       0xbc ./Drivers/SSD1306/Src/ssd1306_fonts.o
- .debug_abbrev  0x00000cd8      0x24b ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.o
- .debug_abbrev  0x00000f23      0x31d ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.o
- .debug_abbrev  0x00001240      0x1d3 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.o
- .debug_abbrev  0x00001413      0x2bc ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2c.o
- .debug_abbrev  0x000016cf      0x2b6 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.o
- .debug_abbrev  0x00001985      0x31b ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.o
+ .debug_abbrev  0x00000c1c       0xcd ./Drivers/SSD1306/Src/ssd1306_fonts.o
+ .debug_abbrev  0x00000ce9      0x24b ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.o
+ .debug_abbrev  0x00000f34      0x31d ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.o
+ .debug_abbrev  0x00001251      0x1d3 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.o
+ .debug_abbrev  0x00001424      0x2bc ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2c.o
+ .debug_abbrev  0x000016e0      0x2b6 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.o
+ .debug_abbrev  0x00001996      0x31b ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.o
 
 .debug_aranges  0x00000000      0xa58
  .debug_aranges
@@ -4059,7 +4061,7 @@ LOAD C:/ST/STM32CubeIDE_2.1.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.exte
  .debug_rnglists
                 0x00000644      0x1bc ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.o
 
-.debug_macro    0x00000000    0x16145
+.debug_macro    0x00000000    0x1614b
  .debug_macro   0x00000000      0x237 ./Core/Src/display_controller.o
  .debug_macro   0x00000237      0xad8 ./Core/Src/display_controller.o
  .debug_macro   0x00000d0f      0x190 ./Core/Src/display_controller.o
@@ -4073,68 +4075,68 @@ LOAD C:/ST/STM32CubeIDE_2.1.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.exte
  .debug_macro   0x0000134d       0x2a ./Core/Src/display_controller.o
  .debug_macro   0x00001377       0x43 ./Core/Src/display_controller.o
  .debug_macro   0x000013ba       0x34 ./Core/Src/display_controller.o
- .debug_macro   0x000013ee       0x34 ./Core/Src/display_controller.o
- .debug_macro   0x00001422      0x29b ./Core/Src/display_controller.o
- .debug_macro   0x000016bd       0x28 ./Core/Src/display_controller.o
- .debug_macro   0x000016e5       0x28 ./Core/Src/display_controller.o
- .debug_macro   0x0000170d       0x1c ./Core/Src/display_controller.o
- .debug_macro   0x00001729       0x22 ./Core/Src/display_controller.o
- .debug_macro   0x0000174b       0xfb ./Core/Src/display_controller.o
- .debug_macro   0x00001846     0x1011 ./Core/Src/display_controller.o
- .debug_macro   0x00002857      0x11f ./Core/Src/display_controller.o
- .debug_macro   0x00002976     0xb881 ./Core/Src/display_controller.o
- .debug_macro   0x0000e1f7       0x6d ./Core/Src/display_controller.o
- .debug_macro   0x0000e264     0x3693 ./Core/Src/display_controller.o
- .debug_macro   0x000118f7       0x5c ./Core/Src/display_controller.o
- .debug_macro   0x00011953      0x416 ./Core/Src/display_controller.o
- .debug_macro   0x00011d69      0x9e9 ./Core/Src/display_controller.o
- .debug_macro   0x00012752      0x115 ./Core/Src/display_controller.o
- .debug_macro   0x00012867       0xf8 ./Core/Src/display_controller.o
- .debug_macro   0x0001295f       0xa5 ./Core/Src/display_controller.o
- .debug_macro   0x00012a04      0x15f ./Core/Src/display_controller.o
- .debug_macro   0x00012b63      0x287 ./Core/Src/display_controller.o
- .debug_macro   0x00012dea       0x5f ./Core/Src/display_controller.o
- .debug_macro   0x00012e49      0x236 ./Core/Src/display_controller.o
- .debug_macro   0x0001307f      0x132 ./Core/Src/display_controller.o
- .debug_macro   0x000131b1      0x264 ./Core/Src/display_controller.o
- .debug_macro   0x00013415       0x2e ./Core/Src/display_controller.o
- .debug_macro   0x00013443      0x1b5 ./Core/Src/display_controller.o
- .debug_macro   0x000135f8       0x22 ./Core/Src/display_controller.o
- .debug_macro   0x0001361a       0xd6 ./Core/Src/display_controller.o
- .debug_macro   0x000136f0      0x127 ./Core/Src/display_controller.o
- .debug_macro   0x00013817       0x85 ./Core/Src/display_controller.o
- .debug_macro   0x0001389c       0x89 ./Core/Src/display_controller.o
- .debug_macro   0x00013925      0x2aa ./Core/Src/display_controller.o
- .debug_macro   0x00013bcf      0x126 ./Core/Src/display_controller.o
- .debug_macro   0x00013cf5       0x4c ./Core/Src/display_controller.o
- .debug_macro   0x00013d41      0x2c5 ./Core/Src/main.o
- .debug_macro   0x00014006       0x2e ./Core/Src/main.o
- .debug_macro   0x00014034      0x364 ./Core/Src/main.o
- .debug_macro   0x00014398       0x16 ./Core/Src/main.o
- .debug_macro   0x000143ae       0x4a ./Core/Src/main.o
- .debug_macro   0x000143f8       0x34 ./Core/Src/main.o
- .debug_macro   0x0001442c       0x10 ./Core/Src/main.o
- .debug_macro   0x0001443c       0x58 ./Core/Src/main.o
- .debug_macro   0x00014494       0x8e ./Core/Src/main.o
- .debug_macro   0x00014522       0x1c ./Core/Src/main.o
- .debug_macro   0x0001453e      0x17e ./Core/Src/main.o
- .debug_macro   0x000146bc       0x10 ./Core/Src/main.o
- .debug_macro   0x000146cc       0x3c ./Core/Src/main.o
- .debug_macro   0x00014708       0x20 ./Core/Src/main.o
- .debug_macro   0x00014728      0x1dd ./Core/Src/stm32f4xx_hal_msp.o
- .debug_macro   0x00014905      0x1e7 ./Core/Src/stm32f4xx_it.o
- .debug_macro   0x00014aec      0x1d3 ./Core/Src/system_stm32f4xx.o
- .debug_macro   0x00014cbf      0x1e3 ./Core/Src/uart_input.o
- .debug_macro   0x00014ea2      0x2fe ./Drivers/SSD1306/Src/ssd1306.o
- .debug_macro   0x000151a0      0x19b ./Drivers/SSD1306/Src/ssd1306.o
- .debug_macro   0x0001533b       0x16 ./Drivers/SSD1306/Src/ssd1306.o
- .debug_macro   0x00015351      0x229 ./Drivers/SSD1306/Src/ssd1306_fonts.o
- .debug_macro   0x0001557a      0x233 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.o
- .debug_macro   0x000157ad      0x1d3 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.o
- .debug_macro   0x00015980      0x1d9 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.o
- .debug_macro   0x00015b59      0x221 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2c.o
- .debug_macro   0x00015d7a      0x1f7 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.o
- .debug_macro   0x00015f71      0x1d4 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.o
+ .debug_macro   0x000013ee       0x3a ./Core/Src/display_controller.o
+ .debug_macro   0x00001428      0x29b ./Core/Src/display_controller.o
+ .debug_macro   0x000016c3       0x28 ./Core/Src/display_controller.o
+ .debug_macro   0x000016eb       0x28 ./Core/Src/display_controller.o
+ .debug_macro   0x00001713       0x1c ./Core/Src/display_controller.o
+ .debug_macro   0x0000172f       0x22 ./Core/Src/display_controller.o
+ .debug_macro   0x00001751       0xfb ./Core/Src/display_controller.o
+ .debug_macro   0x0000184c     0x1011 ./Core/Src/display_controller.o
+ .debug_macro   0x0000285d      0x11f ./Core/Src/display_controller.o
+ .debug_macro   0x0000297c     0xb881 ./Core/Src/display_controller.o
+ .debug_macro   0x0000e1fd       0x6d ./Core/Src/display_controller.o
+ .debug_macro   0x0000e26a     0x3693 ./Core/Src/display_controller.o
+ .debug_macro   0x000118fd       0x5c ./Core/Src/display_controller.o
+ .debug_macro   0x00011959      0x416 ./Core/Src/display_controller.o
+ .debug_macro   0x00011d6f      0x9e9 ./Core/Src/display_controller.o
+ .debug_macro   0x00012758      0x115 ./Core/Src/display_controller.o
+ .debug_macro   0x0001286d       0xf8 ./Core/Src/display_controller.o
+ .debug_macro   0x00012965       0xa5 ./Core/Src/display_controller.o
+ .debug_macro   0x00012a0a      0x15f ./Core/Src/display_controller.o
+ .debug_macro   0x00012b69      0x287 ./Core/Src/display_controller.o
+ .debug_macro   0x00012df0       0x5f ./Core/Src/display_controller.o
+ .debug_macro   0x00012e4f      0x236 ./Core/Src/display_controller.o
+ .debug_macro   0x00013085      0x132 ./Core/Src/display_controller.o
+ .debug_macro   0x000131b7      0x264 ./Core/Src/display_controller.o
+ .debug_macro   0x0001341b       0x2e ./Core/Src/display_controller.o
+ .debug_macro   0x00013449      0x1b5 ./Core/Src/display_controller.o
+ .debug_macro   0x000135fe       0x22 ./Core/Src/display_controller.o
+ .debug_macro   0x00013620       0xd6 ./Core/Src/display_controller.o
+ .debug_macro   0x000136f6      0x127 ./Core/Src/display_controller.o
+ .debug_macro   0x0001381d       0x85 ./Core/Src/display_controller.o
+ .debug_macro   0x000138a2       0x89 ./Core/Src/display_controller.o
+ .debug_macro   0x0001392b      0x2aa ./Core/Src/display_controller.o
+ .debug_macro   0x00013bd5      0x126 ./Core/Src/display_controller.o
+ .debug_macro   0x00013cfb       0x4c ./Core/Src/display_controller.o
+ .debug_macro   0x00013d47      0x2c5 ./Core/Src/main.o
+ .debug_macro   0x0001400c       0x2e ./Core/Src/main.o
+ .debug_macro   0x0001403a      0x364 ./Core/Src/main.o
+ .debug_macro   0x0001439e       0x16 ./Core/Src/main.o
+ .debug_macro   0x000143b4       0x4a ./Core/Src/main.o
+ .debug_macro   0x000143fe       0x34 ./Core/Src/main.o
+ .debug_macro   0x00014432       0x10 ./Core/Src/main.o
+ .debug_macro   0x00014442       0x58 ./Core/Src/main.o
+ .debug_macro   0x0001449a       0x8e ./Core/Src/main.o
+ .debug_macro   0x00014528       0x1c ./Core/Src/main.o
+ .debug_macro   0x00014544      0x17e ./Core/Src/main.o
+ .debug_macro   0x000146c2       0x10 ./Core/Src/main.o
+ .debug_macro   0x000146d2       0x3c ./Core/Src/main.o
+ .debug_macro   0x0001470e       0x20 ./Core/Src/main.o
+ .debug_macro   0x0001472e      0x1dd ./Core/Src/stm32f4xx_hal_msp.o
+ .debug_macro   0x0001490b      0x1e7 ./Core/Src/stm32f4xx_it.o
+ .debug_macro   0x00014af2      0x1d3 ./Core/Src/system_stm32f4xx.o
+ .debug_macro   0x00014cc5      0x1e3 ./Core/Src/uart_input.o
+ .debug_macro   0x00014ea8      0x2fe ./Drivers/SSD1306/Src/ssd1306.o
+ .debug_macro   0x000151a6      0x19b ./Drivers/SSD1306/Src/ssd1306.o
+ .debug_macro   0x00015341       0x16 ./Drivers/SSD1306/Src/ssd1306.o
+ .debug_macro   0x00015357      0x229 ./Drivers/SSD1306/Src/ssd1306_fonts.o
+ .debug_macro   0x00015580      0x233 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.o
+ .debug_macro   0x000157b3      0x1d3 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.o
+ .debug_macro   0x00015986      0x1d9 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.o
+ .debug_macro   0x00015b5f      0x221 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2c.o
+ .debug_macro   0x00015d80      0x1f7 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.o
+ .debug_macro   0x00015f77      0x1d4 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.o
 
 .debug_line     0x00000000     0xdf36
  .debug_line    0x00000000      0x8e0 ./Core/Src/display_controller.o
@@ -4153,23 +4155,23 @@ LOAD C:/ST/STM32CubeIDE_2.1.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.exte
  .debug_line    0x0000ab67      0xe4b ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.o
  .debug_line    0x0000b9b2     0x2584 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.o
 
-.debug_str      0x00000000    0x87c6b
- .debug_str     0x00000000    0x87c6b ./Core/Src/display_controller.o
-                              0x813f2 (size before relaxing)
- .debug_str     0x00087c6b    0x849e9 ./Core/Src/main.o
- .debug_str     0x00087c6b    0x8169e ./Core/Src/stm32f4xx_hal_msp.o
- .debug_str     0x00087c6b    0x80e56 ./Core/Src/stm32f4xx_it.o
- .debug_str     0x00087c6b    0x80f92 ./Core/Src/system_stm32f4xx.o
- .debug_str     0x00087c6b    0x81386 ./Core/Src/uart_input.o
- .debug_str     0x00087c6b       0x7c ./Core/Startup/startup_stm32f401retx.o
- .debug_str     0x00087c6b    0x853e7 ./Drivers/SSD1306/Src/ssd1306.o
- .debug_str     0x00087c6b    0x8137b ./Drivers/SSD1306/Src/ssd1306_fonts.o
- .debug_str     0x00087c6b    0x819b4 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.o
- .debug_str     0x00087c6b    0x8171e ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.o
- .debug_str     0x00087c6b    0x8110d ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.o
- .debug_str     0x00087c6b    0x81fa3 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2c.o
- .debug_str     0x00087c6b    0x813c6 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.o
- .debug_str     0x00087c6b    0x81995 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.o
+.debug_str      0x00000000    0x87c99
+ .debug_str     0x00000000    0x87c99 ./Core/Src/display_controller.o
+                              0x8140c (size before relaxing)
+ .debug_str     0x00087c99    0x849e9 ./Core/Src/main.o
+ .debug_str     0x00087c99    0x8169e ./Core/Src/stm32f4xx_hal_msp.o
+ .debug_str     0x00087c99    0x80e56 ./Core/Src/stm32f4xx_it.o
+ .debug_str     0x00087c99    0x80f92 ./Core/Src/system_stm32f4xx.o
+ .debug_str     0x00087c99    0x81386 ./Core/Src/uart_input.o
+ .debug_str     0x00087c99       0x7c ./Core/Startup/startup_stm32f401retx.o
+ .debug_str     0x00087c99    0x85402 ./Drivers/SSD1306/Src/ssd1306.o
+ .debug_str     0x00087c99    0x813a9 ./Drivers/SSD1306/Src/ssd1306_fonts.o
+ .debug_str     0x00087c99    0x819b4 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.o
+ .debug_str     0x00087c99    0x8171e ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.o
+ .debug_str     0x00087c99    0x8110d ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.o
+ .debug_str     0x00087c99    0x81fa3 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2c.o
+ .debug_str     0x00087c99    0x813c6 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.o
+ .debug_str     0x00087c99    0x81995 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.o
 
 .comment        0x00000000       0x43
  .comment       0x00000000       0x43 ./Core/Src/display_controller.o
