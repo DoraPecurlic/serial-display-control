@@ -25,7 +25,7 @@ void Display_ShowText(const char *text)
 
 	ssd1306_Fill(Black);
 	ssd1306_SetCursor(0U, 0U);
-	ssd1306_WriteString((char *)text, Font_16x15, White);
+	ssd1306_WriteString((char *)text, Font_7x10, White);
 	ssd1306_UpdateScreen();
 
 }
