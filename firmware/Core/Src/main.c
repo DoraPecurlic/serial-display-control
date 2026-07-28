@@ -25,6 +25,7 @@
 #include <string.h>
 #include "uart_input.h"
 #include "display_controller.h"
+#include "serial_protocol.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -99,6 +100,7 @@ int main(void)
   /* USER CODE BEGIN 2 */
   UART_InputInit(&huart2);
   Display_Init();
+  SerialProtocol_Init(&huart2);
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -109,7 +111,7 @@ int main(void)
 	  if(UART_InputProcess() != 0U) //PROVJERAVA JEL STIGAO ZNAK
 	  {
 		  Display_ShowText(UART_InputGetText());
-
+		  SerialProtocol_SendOK();
 		  UART_InputClear();
 	  }
     /* USER CODE BEGIN 3 */

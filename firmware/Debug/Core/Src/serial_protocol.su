@@ -1,0 +1,2 @@
+../Core/Src/serial_protocol.c:24:6:SerialProtocol_Init	16	static
+../Core/Src/serial_protocol.c:29:6:SerialProtocol_SendOK	8	static

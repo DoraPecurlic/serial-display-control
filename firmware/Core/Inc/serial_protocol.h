@@ -8,6 +8,8 @@
 #ifndef INC_SERIAL_PROTOCOL_H_
 #define INC_SERIAL_PROTOCOL_H_
 
+#include "stm32f4xx_hal.h"
+
 void SerialProtocol_Init(UART_HandleTypeDef *huart);
 void SerialProtocol_SendOK(void);
 
