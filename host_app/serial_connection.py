@@ -52,4 +52,17 @@ class SerialConnection:
             self._serial.flush()
             time.sleep(0.01)
 
+    def read_line(self) -> str:
+        if not self.is_connected:
+            raise ConnectionError("Serial connection is not opened.")
+
+        received_data = self._serial.readline() #ok potvrda
+
+        if not received_data:
+            raise TimeoutError("STM did not send a response.")
+        
+        if not received_data.endswith(b"\n"):
+            raise TimeoutError("STM32 sent an incomplete response.")
+
+        return received_data.decode("ascii").rstrip("\r\n")
         

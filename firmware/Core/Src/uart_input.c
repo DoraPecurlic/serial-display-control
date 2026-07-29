@@ -17,8 +17,8 @@ static UART_HandleTypeDef *uartHandle = NULL; //jer svaka  HAL funkcija ocekuje 
 static char inputBuffer[UART_INPUT_MAX_TEXT_LENGTH + 1U];
 static uint8_t inputIndex = 0U;
 
-static uint8_t newLine[] = "\r\n";
-static uint8_t backspaceSequence[] = "\b \b";
+//static uint8_t newLine[] = "\r\n";
+//static uint8_t backspaceSequence[] = "\b \b";
 
 /* Private function prototypes -----------------------------------------------*/
 static HAL_StatusTypeDef UART_InputReceiveCharacter(uint8_t *receivedCharacter);
@@ -71,7 +71,7 @@ static uint8_t UART_InputProcessCharcter(uint8_t receivedCharacter)
 
 		inputBuffer[inputIndex] = '\0';
 
-		HAL_UART_Transmit(uartHandle, newLine, sizeof(newLine)-1U, HAL_MAX_DELAY);
+		//HAL_UART_Transmit(uartHandle, newLine, sizeof(newLine)-1U, HAL_MAX_DELAY);
 
 		return 1U;
 	}
@@ -82,7 +82,7 @@ static uint8_t UART_InputProcessCharcter(uint8_t receivedCharacter)
 		{
 			inputIndex--;
 			inputBuffer[inputIndex] = '\0';
-			HAL_UART_Transmit(uartHandle, backspaceSequence, sizeof(backspaceSequence)-1U, HAL_MAX_DELAY);
+			//HAL_UART_Transmit(uartHandle, backspaceSequence, sizeof(backspaceSequence)-1U, HAL_MAX_DELAY);
 		}
 
 		return 0U;
@@ -94,7 +94,7 @@ static uint8_t UART_InputProcessCharcter(uint8_t receivedCharacter)
 		inputIndex++;
 		inputBuffer[inputIndex] = '\0';
 
-		HAL_UART_Transmit(uartHandle, &receivedCharacter, 1U, HAL_MAX_DELAY);
+		//HAL_UART_Transmit(uartHandle, &receivedCharacter, 1U, HAL_MAX_DELAY);
 	}
 	// 0 - NASTAVAK UPISIVANJE, 1 - KORISNIK PRITISNUO ENTER
 
