@@ -1,13 +1,17 @@
 from serial_connection import SerialConnection
 from display_client import DisplayClient
 from console_app import ConsoleApp
+from serial_protocol import SerialProtocol, ProtocolError
+
+
 import time 
 
 SERIAL_PORT = "COM7"
 
 def main() -> None:
     connection = SerialConnection(port = SERIAL_PORT)
-    display_client = DisplayClient(connection)
+    protocol = SerialProtocol(connection)
+    display_client = DisplayClient(protocol)
     console_app = ConsoleApp(display_client)
 
     try:
@@ -17,8 +21,8 @@ def main() -> None:
 
         console_app.run()
 
-    except (ConnectionError, ValueError) as error:
-        print(error)
+    except (ConnectionError, ValueError, ProtocolError) as error:
+        print(f"Communication error: {error}")
     except KeyboardInterrupt:
         print("\n Application stopped by User.")
     finally:
