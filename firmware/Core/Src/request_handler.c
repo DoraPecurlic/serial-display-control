@@ -28,7 +28,7 @@ void RequestHandler_Process(const char *message)
 	if(request.type == SERIAL_PROTOCOL_REQUEST_TEXT)
 	{
 		DisplayController_ShowText(request.payload);
-		SerialProtocol_SendOk();
+		SerialProtocol_SendOK();
 
 		return;
 	}

@@ -1,2 +1,2 @@
 ../Core/Src/display_controller.c:12:6:Display_Init	8	static
-../Core/Src/display_controller.c:19:6:Display_ShowText	24	static
+../Core/Src/display_controller.c:19:6:DisplayController_ShowText	24	static

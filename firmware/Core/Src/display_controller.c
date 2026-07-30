@@ -16,7 +16,7 @@ void Display_Init(void)
 	ssd1306_UpdateScreen();
 }
 
-void Display_ShowText(const char *text)
+void DisplayController_ShowText(const char *text)
 {
 	if(text == NULL)
 	{

@@ -9,6 +9,6 @@
 #define INC_DISPLAY_CONTROLLER_H_
 
 void Display_Init(void);
-void Display_ShowText(const char *text);
+void DisplayController_ShowText(const char *text);
 
 #endif /* INC_DISPLAY_CONTROLLER_H_ */

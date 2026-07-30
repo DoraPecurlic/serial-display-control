@@ -9,7 +9,7 @@ class DisplayClient:
 
     def show_text(self, text: str) -> None:
         self._validate_text(text)
-        self._protocol.send_request(text)
+        self._protocol.send_text(text)
 
     def _validate_text(self, text: str) -> None:
         if len(text) > self.MAX_TEXT_LENGTH:
