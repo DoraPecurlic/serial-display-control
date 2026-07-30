@@ -10,8 +10,25 @@
 
 #include "stm32f4xx_hal.h"
 
+typedef enum
+{
+	SERIAL_PROTOCOL_REQUEST_TEXT,
+	SERIAL_PROTOCOL_REQUEST_INVALID = 0
+}SerialProtocolRequestType;
+
+
+typedef struct
+{
+	SerialProtocolRequestType type;
+	const char *payload;
+}SerialProtocolRequest;
+
+
 void SerialProtocol_Init(UART_HandleTypeDef *huart);
 void SerialProtocol_SendOK(void);
+
+SerialProtocolRequest SerialProtocol_ParseRequest(const char *message);
+void SerialProtocol_SendInvalidRequest(void);
 
 
 #endif /* INC_SERIAL_PROTOCOL_H_ */

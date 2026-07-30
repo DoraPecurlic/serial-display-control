@@ -8,13 +8,16 @@
 
 
 /* Macro -------------------------------------------------------------*/
-
-
+#define SERIAL_PROTOCOL_TEXT_PREFIX "TEXT:"
+#define SERIAL_PROTOCOL_TEXT_PREFIX_LENGTH 5U;
 
 
 /* Private variables ---------------------------------------------------------*/
 static UART_HandleTypeDef *protocolUartHandler = NULL;
 static uint8_t okResponse[] = "OK\r\n";
+
+static uint8_t invalidRequestResponse[] = "ERROR: INVALID REQUEST\r\n";
+
 
 
 /* Private function prototypes -----------------------------------------------*/
@@ -32,4 +35,17 @@ void SerialProtocol_SendOK(void)
 		return;
 
 	HAL_UART_Transmit(protocolUartHandler, okResponse, sizeof(okResponse)-1U, HAL_MAX_DELAY);
+}
+
+SerialProtocolRequest SerialProtocol_ParseRequest(const char *message)
+{
+
+}
+
+void SerialProtocol_SendInvalidRequest(void)
+{
+	if(protocolUartHandler == NULL)
+			return;
+
+	HAL_UART_Transmit(protocolUartHandler, invalidRequestResponse, sizeof(invalidRequestResponse)-1U, HAL_MAX_DELAY);
 }

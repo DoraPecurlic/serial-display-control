@@ -1,2 +1,4 @@
-../Core/Src/serial_protocol.c:24:6:SerialProtocol_Init	1
-../Core/Src/serial_protocol.c:29:6:SerialProtocol_SendOK	2
+../Core/Src/serial_protocol.c:27:6:SerialProtocol_Init	1
+../Core/Src/serial_protocol.c:32:6:SerialProtocol_SendOK	2
+../Core/Src/serial_protocol.c:40:23:SerialProtocol_ParseRequest	1
+../Core/Src/serial_protocol.c:45:6:SerialProtocol_SendInvalidRequest	2
