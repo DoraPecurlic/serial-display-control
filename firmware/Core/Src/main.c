@@ -111,8 +111,8 @@ int main(void)
     /* USER CODE END WHILE */
 	  if(UART_InputProcess() != 0U) //PROVJERAVA JEL STIGAO ZNAK
 	  {
-		  Display_ShowText(UART_InputGetText());
-		  SerialProtocol_SendOK();
+		  //Display_ShowText(UART_InputGetText());
+		  RequestHandler_Process(UART_InputGetText());
 		  UART_InputClear();
 	  }
     /* USER CODE BEGIN 3 */
