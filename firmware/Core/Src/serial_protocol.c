@@ -5,11 +5,12 @@
  *      Author: Dora_
  */
 #include "serial_protocol.h"
+#include <string.h>
 
 
 /* Macro -------------------------------------------------------------*/
 #define SERIAL_PROTOCOL_TEXT_PREFIX "TEXT:"
-#define SERIAL_PROTOCOL_TEXT_PREFIX_LENGTH 5U;
+#define SERIAL_PROTOCOL_TEXT_PREFIX_LENGTH 5U
 
 
 /* Private variables ---------------------------------------------------------*/
@@ -39,7 +40,23 @@ void SerialProtocol_SendOK(void)
 
 SerialProtocolRequest SerialProtocol_ParseRequest(const char *message)
 {
+	SerialProtocolRequest package;
 
+	package.type = SERIAL_PROTOCOL_REQUEST_INVALID;
+	package.payload = NULL;
+
+	if(message == NULL)
+	{
+		return package;
+	}
+
+	if((strncmp(message, SERIAL_PROTOCOL_TEXT_PREFIX, SERIAL_PROTOCOL_TEXT_PREFIX_LENGTH) == 0) && (message[SERIAL_PROTOCOL_TEXT_PREFIX_LENGTH] != '\0'))
+	{
+		package.type = SERIAL_PROTOCOL_REQUEST_TEXT;
+		package.payload = &message[SERIAL_PROTOCOL_TEXT_PREFIX_LENGTH];
+	}
+
+	return package;
 }
 
 void SerialProtocol_SendInvalidRequest(void)
