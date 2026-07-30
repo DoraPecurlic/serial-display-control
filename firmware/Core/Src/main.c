@@ -26,6 +26,7 @@
 #include "uart_input.h"
 #include "display_controller.h"
 #include "serial_protocol.h"
+#include "request_handler.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/

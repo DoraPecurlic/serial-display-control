@@ -10,11 +10,11 @@
 
 
 /* Macro -------------------------------------------------------------*/
-#define UART_INPUT_MAX_TEXT_LENGTH 15U
+#define UART_INPUT_MAX_MESSAGE_LENGTH 64U
 
 /* Private variables ---------------------------------------------------------*/
 static UART_HandleTypeDef *uartHandle = NULL; //jer svaka  HAL funkcija ocekuje pokazivac bas a ne kopiju
-static char inputBuffer[UART_INPUT_MAX_TEXT_LENGTH + 1U];
+static char inputBuffer[UART_INPUT_MAX_MESSAGE_LENGTH + 1U];
 static uint8_t inputIndex = 0U;
 
 //static uint8_t newLine[] = "\r\n";
@@ -88,7 +88,7 @@ static uint8_t UART_InputProcessCharcter(uint8_t receivedCharacter)
 		return 0U;
 	}
 	// AKO JE OBICAN VIDLJIV  ZNAK - UPISI GA U BUFFER I PRIKAZI U PUTTIJU
-	if((receivedCharacter >= 32U) && (receivedCharacter <= 126U) && (inputIndex < UART_INPUT_MAX_TEXT_LENGTH ))
+	if((receivedCharacter >= 32U) && (receivedCharacter <= 126U) && (inputIndex < UART_INPUT_MAX_MESSAGE_LENGTH ))
 	{
 		inputBuffer[inputIndex] = (char)receivedCharacter;
 		inputIndex++;
