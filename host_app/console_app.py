@@ -1,21 +1,25 @@
-from display_client import DisplayClient
+from application_controller import ApplicationController
 
 class ConsoleApp:
     EXIT_COMMAND = "exit"
 
-    def __init__(self, display: DisplayClient) -> None:
-        self._display = display
+    def __init__(self, app_controller: ApplicationController) -> None:
+        self._app_controller = app_controller
 
     def run(self) -> None:
+        print(
+            f"Enter text, a command starting with ':', "
+            f"or '{self.EXIT_COMMAND}' to quit."
+        )
 
         while True:
-            text = input("Enter text or type 'exit' to quit: ")
+            user_input = input("> ")
 
-            if self._is_exit_command(text):
+            if self._is_exit_command(user_input):
                 print("Closing application.")
                 break
 
-            self._send_text(text)
+            self._app_controller.handle_input(user_input)
             
 
     def _is_exit_command(self, text: str) -> bool:

@@ -2,6 +2,8 @@ from serial_connection import SerialConnection
 from display_client import DisplayClient
 from console_app import ConsoleApp
 from serial_protocol import SerialProtocol, ProtocolError
+from command_parser import CommandParser
+from application_controller import ApplicationController
 
 
 import time 
@@ -12,7 +14,11 @@ def main() -> None:
     connection = SerialConnection(port = SERIAL_PORT)
     protocol = SerialProtocol(connection)
     display_client = DisplayClient(protocol)
-    console_app = ConsoleApp(display_client)
+
+    command_parser = CommandParser()
+    application_controller = ApplicationController(command_parser, display_client)
+
+    console_app = ConsoleApp(application_controller)
 
     try:
         connection.connect()
