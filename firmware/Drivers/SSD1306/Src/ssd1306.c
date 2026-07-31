@@ -3,6 +3,22 @@
 #include <stdlib.h>
 #include <string.h>  // For memcpy
 
+#define SSD1306_CMD_SCROLL_LEFT 0x27u
+#define SSD1306_CMD_SCROLL_RIGHT 0x26u
+
+#define SSD1306_CMD_DEACTIVATE_SCROLL 0x2EU
+#define SSD1306_CMD_ACTIVATE_SCROLL 0x2FU
+
+#define SSD1306_SCROLL_DUMMY_BYTE 0x00U
+#define SSD1306_SCROLL_INTERVAL 0x00U
+#define SSD1306_SCROLL_DUMMY_BYTE_END 0xFFU
+
+#define SSD1306_SCROLL_FIRST_PAGE 0x00U
+#define SSD1306_SCROLL_LAST_PAGE ((SSD1306_HEIGHT / 8U) - 1U)
+
+
+static void StartHorizontalScroll(uint8_t direction);
+
 #if defined(SSD1306_USE_I2C)
 
 void ssd1306_Reset(void) {
@@ -590,4 +606,34 @@ void ssd1306_SetDisplayOn(const uint8_t on) {
 
 uint8_t ssd1306_GetDisplayOn() {
     return SSD1306.DisplayOn;
+}
+
+static void StartHorizontalScroll(uint8_t direction)
+{
+	ssd1306_StopScroll();
+
+	ssd1306_WriteCommand(direction);
+
+	ssd1306_WriteCommand(SSD1306_SCROLL_DUMMY_BYTE);
+	ssd1306_WriteCommand(SSD1306_SCROLL_FIRST_PAGE);
+	ssd1306_WriteCommand(SSD1306_SCROLL_INTERVAL);
+	ssd1306_WriteCommand(SSD1306_SCROLL_LAST_PAGE);
+	ssd1306_WriteCommand(SSD1306_SCROLL_DUMMY_BYTE);
+	ssd1306_WriteCommand(SSD1306_SCROLL_DUMMY_BYTE_END);
+
+	ssd1306_WriteCommand(SSD1306_CMD_ACTIVATE_SCROLL);
+}
+
+void ssd1306_StartScrollLeft(void)
+{
+	StartHorizontalScroll(SSD1306_CMD_SCROLL_LEFT);
+}
+void ssd1306_StartScrollRight(void)
+{
+	StartHorizontalScroll(SSD1306_CMD_SCROLL_RIGHT);
+}
+
+void ssd1306_StopScroll(void)
+{
+	ssd1306_WriteCommand(SSD1306_CMD_DEACTIVATE_SCROLL);
 }

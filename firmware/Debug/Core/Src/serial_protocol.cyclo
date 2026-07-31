@@ -1,5 +1,0 @@
-../Core/Src/serial_protocol.c:32:6:SerialProtocol_Init	1
-../Core/Src/serial_protocol.c:37:6:SerialProtocol_SendOK	2
-../Core/Src/serial_protocol.c:45:23:SerialProtocol_ParseRequest	6
-../Core/Src/serial_protocol.c:72:6:SerialProtocol_SendInvalidRequest	2
-../Core/Src/serial_protocol.c:80:6:SerialProtocol_SendUnknownCommand	2

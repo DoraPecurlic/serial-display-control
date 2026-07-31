@@ -1,6 +1,0 @@
-../Core/Src/uart_input.c:27:6:UART_InputInit	1
-../Core/Src/uart_input.c:33:6:UART_InputClear	1
-../Core/Src/uart_input.c:39:9:UART_InputProcess	2
-../Core/Src/uart_input.c:52:26:ReceiveCharacter	3
-../Core/Src/uart_input.c:62:16:ProcessCharcter	10
-../Core/Src/uart_input.c:106:14:UART_InputGetText	1

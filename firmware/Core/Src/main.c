@@ -27,6 +27,7 @@
 #include "display_controller.h"
 #include "serial_protocol.h"
 #include "request_handler.h"
+
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -102,6 +103,8 @@ int main(void)
   UART_InputInit(&huart2);
   Display_Init();
   SerialProtocol_Init(&huart2);
+
+
   /* USER CODE END 2 */
 
   /* Infinite loop */

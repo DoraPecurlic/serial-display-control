@@ -1,0 +1,8 @@
+# STM32CubeIDE generated build files
+/firmware/Debug/
+/firmware/Release/
+
+# Python generated files
+/host_app/.venv/
+__pycache__/
+*.py[cod]
