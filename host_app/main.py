@@ -27,10 +27,12 @@ def main() -> None:
 
         console_app.run()
 
-    except (ConnectionError, ValueError, ProtocolError) as error:
-        print(f"Communication error: {error}")
+    except ConnectionError as error:
+        print(f"Connection error: {error}")
+
     except KeyboardInterrupt:
-        print("\n Application stopped by User.")
+        print("\n Application stopped by User")
+
     finally:
         if connection.is_connected:
             connection.disconnect()

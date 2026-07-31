@@ -118,6 +118,8 @@ int main(void)
 		  RequestHandler_Process(UART_InputGetText());
 		  UART_InputClear();
 	  }
+
+	  DisplayController_Process();
     /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */

@@ -33,5 +33,9 @@ class ApplicationController:
         if command.command_type == CommandType.STOP:
             self._display_client.stop()
             return
+
+        if command.command_type == CommandType.BLINK:
+                    self._display_client.blink()
+                    return
         
         raise ValueError("Unsupported command.")

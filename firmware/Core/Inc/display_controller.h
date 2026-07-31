@@ -17,4 +17,7 @@ void DisplayController_StartScrollRight(void);
 
 void DisplayController_StopEffect(void);
 
+void DisplayController_StartBlink(void);
+void DisplayController_Process(void);
+
 #endif /* INC_DISPLAY_CONTROLLER_H_ */

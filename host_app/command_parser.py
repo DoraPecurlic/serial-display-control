@@ -8,6 +8,7 @@ class CommandParser:
         "scroll left": CommandType.SCROLL_LEFT,
         "scroll right": CommandType.SCROLL_RIGHT,
         "stop": CommandType.STOP,
+        "blink": CommandType.BLINK,
     }
 
     def parse(self, user_input: str) -> ParsedCommand:

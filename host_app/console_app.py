@@ -1,4 +1,5 @@
 from application_controller import ApplicationController
+from serial_protocol import ProtocolError
 
 class ConsoleApp:
     EXIT_COMMAND = "exit"
@@ -19,17 +20,23 @@ class ConsoleApp:
                 print("Closing application.")
                 break
 
-            self._app_controller.handle_input(user_input)
+            try:
+                self._app_controller.handle_input(user_input)
+
+            except ValueError as error:
+                print(f"Invalid input: {error}")
+
+            except ProtocolError as error:
+                print(f"Device error: {error}")
+
+            except TimeoutError as error:
+                print(f"Communication timeout: {error}")
+
             
 
     def _is_exit_command(self, text: str) -> bool:
         return text.strip().lower() == self.EXIT_COMMAND
 
-    def _send_text(self, text:str) -> None:
-        try:
-            self._display.show_text(text)
-            print("Text sent to display.")
-        except ValueError as error:
-            print(f"Invalid text: {error}")
+    
 
             

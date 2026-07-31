@@ -14,6 +14,7 @@
 #define SCROLL_LEFT_COMMAND "SCROLL_LEFT"
 #define SCROLL_RIGHT_COMMAND "SCROLL_RIGHT"
 #define STOP_COMMAND "STOP"
+#define BLINK_COMMAND "BLINK"
 
 /* Private variables ---------------------------------------------------------*/
 
@@ -82,6 +83,13 @@ static void ProcessCommand(const char* command)
 	    DisplayController_StopEffect();
 	    SerialProtocol_SendOK();
 
+	    return;
+	}
+
+	if (strcmp(command, BLINK_COMMAND) == 0)
+	{
+	    DisplayController_StartBlink();
+	    SerialProtocol_SendOK();
 	    return;
 	}
 
