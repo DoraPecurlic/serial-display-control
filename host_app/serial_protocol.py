@@ -7,12 +7,17 @@ class SerialProtocol:
     SUCCES_RESPONSE = "OK"
     TEXT_REQUEST_PREFIX = "TEXT:"
     ERROR_RESPONSE_PREFIX = "ERROR:"
+    COMMAND_REQUEST_PREFIX = "CMD:"
 
     def __init__(self, connection: SerialConnection) -> None:
         self._connection = connection
 
     def send_text(self, text: str) -> None:
         request = self.TEXT_REQUEST_PREFIX + text
+        self.send_request(request)
+
+    def send_command(self, command: str) -> None:
+        request = self.COMMAND_REQUEST_PREFIX + command
         self.send_request(request)
 
     def send_request(self, request: str) -> None:

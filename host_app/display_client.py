@@ -3,6 +3,7 @@ from serial_protocol import SerialProtocol
 class DisplayClient:
 
     MAX_TEXT_LENGTH = 15
+    CLEAR_COMMAND = "CLEAR"
 
     def __init__(self, protocol: SerialProtocol) -> None: #kompozicija, has-a veza jer objekt display clienta ima objekt serial connectiona
         self._protocol = protocol
@@ -10,6 +11,9 @@ class DisplayClient:
     def show_text(self, text: str) -> None:
         self._validate_text(text)
         self._protocol.send_text(text)
+
+    def clear(self) -> None:
+            self._protocol.send_command(self.CLEAR_COMMAND)
 
     def _validate_text(self, text: str) -> None:
         if len(text) > self.MAX_TEXT_LENGTH:
