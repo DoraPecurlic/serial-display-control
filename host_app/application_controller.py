@@ -21,5 +21,13 @@ class ApplicationController:
         if command.command_type == CommandType.CLEAR:
             self._display_client.clear()
             return
-
+        
+        if command.command_type == CommandType.SCROLL_LEFT:
+            self._display_client.scroll_left()
+            return
+        
+        if command.command_type == CommandType.SCROLL_RIGHT:
+            self._display_client.scroll_right()
+            return
+        
         raise ValueError("Unsupported command.")
