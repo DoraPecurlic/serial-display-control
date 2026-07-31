@@ -30,4 +30,8 @@ class ApplicationController:
             self._display_client.scroll_right()
             return
         
+        if command.command_type == CommandType.STOP:
+            self._display_client.stop()
+            return
+        
         raise ValueError("Unsupported command.")

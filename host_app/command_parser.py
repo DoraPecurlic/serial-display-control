@@ -7,6 +7,7 @@ class CommandParser:
         "clear": CommandType.CLEAR,
         "scroll left": CommandType.SCROLL_LEFT,
         "scroll right": CommandType.SCROLL_RIGHT,
+        "stop": CommandType.STOP,
     }
 
     def parse(self, user_input: str) -> ParsedCommand:

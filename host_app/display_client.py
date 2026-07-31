@@ -7,6 +7,7 @@ class DisplayClient:
     CLEAR_COMMAND = "CLEAR"
     SCROLL_LEFT_COMMAND = "SCROLL_LEFT"
     SCROLL_RIGHT_COMMAND = "SCROLL_RIGHT"
+    STOP_COMMAND = "STOP"
 
     def __init__(self, protocol: SerialProtocol) -> None: #kompozicija, has-a veza jer objekt display clienta ima objekt serial connectiona
         self._protocol = protocol
@@ -23,6 +24,9 @@ class DisplayClient:
 
     def scroll_right(self) -> None:
         self._protocol.send_command(self.SCROLL_RIGHT_COMMAND)
+
+    def stop(self) -> None:
+        self._protocol.send_command(self.STOP_COMMAND)
     
     def _validate_text(self, text: str) -> None:
         if len(text) > self.MAX_TEXT_LENGTH:

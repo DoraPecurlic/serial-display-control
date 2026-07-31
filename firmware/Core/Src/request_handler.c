@@ -13,6 +13,7 @@
 #define CLEAR_COMMAND "CLEAR"
 #define SCROLL_LEFT_COMMAND "SCROLL_LEFT"
 #define SCROLL_RIGHT_COMMAND "SCROLL_RIGHT"
+#define STOP_COMMAND "STOP"
 
 /* Private variables ---------------------------------------------------------*/
 
@@ -74,6 +75,14 @@ static void ProcessCommand(const char* command)
 		SerialProtocol_SendOK();
 
 		return;
+	}
+
+	if (strcmp(command, STOP_COMMAND) == 0)
+	{
+	    DisplayController_StopEffect();
+	    SerialProtocol_SendOK();
+
+	    return;
 	}
 
 	SerialProtocol_SendUnknownCommand();

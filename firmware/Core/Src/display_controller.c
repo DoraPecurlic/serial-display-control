@@ -8,6 +8,13 @@
 #include "ssd1306.h"
 #include "ssd1306_fonts.h"
 
+typedef enum
+{
+    DISPLAY_MODE_STATIC,
+    DISPLAY_MODE_SCROLL
+} DisplayMode;
+
+static DisplayMode currentMode = DISPLAY_MODE_STATIC;
 
 void DisplayController_Init(void)
 {
@@ -40,9 +47,21 @@ void DisplayController_Clear(void)
 void DisplayController_StartScrollLeft(void)
 {
 	ssd1306_StartScrollLeft();
+	currentMode = DISPLAY_MODE_SCROLL;
 }
 
 void DisplayController_StartScrollRight(void)
 {
 	ssd1306_StartScrollRight();
+	currentMode = DISPLAY_MODE_SCROLL;
+}
+
+void DisplayController_StopEffect(void)
+{
+	if((currentMode == DISPLAY_MODE_SCROLL))
+	{
+		ssd1306_StopScroll();
+		ssd1306_UpdateScreen();
+		currentMode = DISPLAY_MODE_STATIC;
+	}
 }

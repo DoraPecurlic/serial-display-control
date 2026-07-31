@@ -7,6 +7,7 @@ class CommandType(Enum):
     CLEAR = auto()
     SCROLL_LEFT = auto()
     SCROLL_RIGHT = auto()
+    STOP = auto()
 
 @dataclass
 class ParsedCommand:

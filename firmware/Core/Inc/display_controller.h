@@ -15,4 +15,6 @@ void DisplayController_Clear(void);
 void DisplayController_StartScrollLeft(void);
 void DisplayController_StartScrollRight(void);
 
+void DisplayController_StopEffect(void);
+
 #endif /* INC_DISPLAY_CONTROLLER_H_ */
