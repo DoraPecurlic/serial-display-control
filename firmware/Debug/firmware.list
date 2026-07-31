@@ -35,17 +35,17 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, READONLY, DEBUGGING, OCTETS
  15 .debug_rnglists 00000838  00000000  00000000  00013a00  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 16 .debug_macro  000165fd  00000000  00000000  00014238  2**0
+ 16 .debug_macro  0001662d  00000000  00000000  00014238  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 17 .debug_line   0000efe9  00000000  00000000  0002a835  2**0
+ 17 .debug_line   0000efec  00000000  00000000  0002a865  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 18 .debug_str    00087e89  00000000  00000000  0003981e  2**0
+ 18 .debug_str    00087f9c  00000000  00000000  00039851  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 19 .comment      00000043  00000000  00000000  000c16a7  2**0
+ 19 .comment      00000043  00000000  00000000  000c17ed  2**0
                   CONTENTS, READONLY
- 20 .debug_frame  00002918  00000000  00000000  000c16ec  2**2
+ 20 .debug_frame  00002918  00000000  00000000  000c1830  2**2
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 21 .debug_line_str 00000060  00000000  00000000  000c4004  2**0
+ 21 .debug_line_str 00000060  00000000  00000000  000c4148  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
 
 Disassembly of section .text:
@@ -1854,8 +1854,8 @@ Infinite_Loop:
  8000c4c:	e7fe      	b.n	8000c4c <ADC_IRQHandler>
 
 08000c4e <ssd1306_Reset>:
-#include <stdlib.h>
-#include <string.h>  // For memcpy
+#define SSD1306_SCROLL_LAST_PAGE ((SSD1306_HEIGHT / 8U) - 1U)
+
 
 #if defined(SSD1306_USE_I2C)
 

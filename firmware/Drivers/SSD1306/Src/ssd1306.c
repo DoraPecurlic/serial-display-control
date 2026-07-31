@@ -3,6 +3,18 @@
 #include <stdlib.h>
 #include <string.h>  // For memcpy
 
+#define SSD1306_CMD_SCROLL_LEFT 0x27u
+#define SSD1306_CMD_STOP_SCROLL 0x2EU
+#define SSD1306_CMD_START_SCROLL 0x2FU
+
+#define SSD1306_SCROLL_DUMMY_BYTE 0x00U
+#define SSD1306_SCROLL_INTERVAL 0x00U
+#define SSD1306_SCROLL_DUMMY_BYTE_END 0xFFU
+
+#define SSD1306_SCROLL_FIRST_PAGE 0x00U
+#define SSD1306_SCROLL_LAST_PAGE ((SSD1306_HEIGHT / 8U) - 1U)
+
+
 #if defined(SSD1306_USE_I2C)
 
 void ssd1306_Reset(void) {
