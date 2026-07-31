@@ -1,6 +1,6 @@
 from command import CommandType, ParsedCommand
 
-class ComandParser:
+class CommandParser:
     COMMAND_PREFIX = ":"
     CLEAR_COMMAND = "clear"
 

@@ -29,3 +29,9 @@ void DisplayController_ShowText(const char *text)
 	ssd1306_UpdateScreen();
 
 }
+
+void DisplayController_Clear(void)
+{
+	ssd1306_Fill(Black);
+	ssd1306_UpdateScreen();
+}

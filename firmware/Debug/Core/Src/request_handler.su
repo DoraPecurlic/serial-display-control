@@ -1,1 +1,2 @@
-../Core/Src/request_handler.c:24:6:RequestHandler_Process	24	static
+../Core/Src/request_handler.c:26:6:RequestHandler_Process	24	static
+../Core/Src/request_handler.c:48:13:ProcessCommand	16	static

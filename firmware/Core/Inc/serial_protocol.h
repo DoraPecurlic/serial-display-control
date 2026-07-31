@@ -13,7 +13,8 @@
 typedef enum
 {
 	SERIAL_PROTOCOL_REQUEST_TEXT,
-	SERIAL_PROTOCOL_REQUEST_INVALID = 0
+	SERIAL_PROTOCOL_REQUEST_INVALID = 0,
+	SERIAL_PROTOCOL_REQUEST_COMMAND
 }SerialProtocolRequestType;
 
 
@@ -29,6 +30,8 @@ void SerialProtocol_SendOK(void);
 
 SerialProtocolRequest SerialProtocol_ParseRequest(const char *message);
 void SerialProtocol_SendInvalidRequest(void);
+
+void SerialProtocol_SendUnknownCommand(void);
 
 
 #endif /* INC_SERIAL_PROTOCOL_H_ */

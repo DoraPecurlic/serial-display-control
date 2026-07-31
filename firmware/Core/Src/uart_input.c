@@ -21,8 +21,8 @@ static uint8_t inputIndex = 0U;
 //static uint8_t backspaceSequence[] = "\b \b";
 
 /* Private function prototypes -----------------------------------------------*/
-static HAL_StatusTypeDef UART_InputReceiveCharacter(uint8_t *receivedCharacter);
-static uint8_t UART_InputProcessCharcter(uint8_t receivedCharacter);
+static HAL_StatusTypeDef ReceiveCharacter(uint8_t *receivedCharacter);
+static uint8_t ProcessCharcter(uint8_t receivedCharacter);
 
 void UART_InputInit(UART_HandleTypeDef *huart)
 {
@@ -40,16 +40,16 @@ uint8_t UART_InputProcess(void)
 {
 	uint8_t receivedCharacter;
 
-	HAL_StatusTypeDef receiveStatus = UART_InputReceiveCharacter(&receivedCharacter);
+	HAL_StatusTypeDef receiveStatus = ReceiveCharacter(&receivedCharacter);
 
 	if(receiveStatus != HAL_OK)
 	{
 		return 0U;
 	}
 
-	return UART_InputProcessCharcter(receivedCharacter);
+	return ProcessCharcter(receivedCharacter);
 }
-static HAL_StatusTypeDef UART_InputReceiveCharacter(uint8_t *receivedCharacter)
+static HAL_StatusTypeDef ReceiveCharacter(uint8_t *receivedCharacter)
 {
 	if((uartHandle == NULL) || (receivedCharacter == NULL))
 	{
@@ -59,7 +59,7 @@ static HAL_StatusTypeDef UART_InputReceiveCharacter(uint8_t *receivedCharacter)
 	return HAL_UART_Receive(uartHandle, receivedCharacter, 1U,1U);
 }
 
-static uint8_t UART_InputProcessCharcter(uint8_t receivedCharacter)
+static uint8_t ProcessCharcter(uint8_t receivedCharacter)
 {
 	//AKO JE ENTER - ZAVRSI TEKST I VRATI 1
 	if(receivedCharacter == '\r' || receivedCharacter == '\n')

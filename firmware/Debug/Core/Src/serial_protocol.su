@@ -1,4 +1,5 @@
-../Core/Src/serial_protocol.c:28:6:SerialProtocol_Init	16	static
-../Core/Src/serial_protocol.c:33:6:SerialProtocol_SendOK	8	static
-../Core/Src/serial_protocol.c:41:23:SerialProtocol_ParseRequest	24	static
-../Core/Src/serial_protocol.c:62:6:SerialProtocol_SendInvalidRequest	8	static
+../Core/Src/serial_protocol.c:32:6:SerialProtocol_Init	16	static
+../Core/Src/serial_protocol.c:37:6:SerialProtocol_SendOK	8	static
+../Core/Src/serial_protocol.c:45:23:SerialProtocol_ParseRequest	24	static
+../Core/Src/serial_protocol.c:72:6:SerialProtocol_SendInvalidRequest	8	static
+../Core/Src/serial_protocol.c:80:6:SerialProtocol_SendUnknownCommand	8	static
