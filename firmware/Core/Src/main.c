@@ -101,7 +101,7 @@ int main(void)
   MX_USART2_UART_Init();
   /* USER CODE BEGIN 2 */
   UART_InputInit(&huart2);
-  Display_Init();
+  DisplayController_Init();
   SerialProtocol_Init(&huart2);
 
 

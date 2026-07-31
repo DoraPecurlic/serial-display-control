@@ -10,9 +10,9 @@
 #include <string.h>
 
 /* Macro -------------------------------------------------------------*/
-#define REQUEST_HANDLER_CLEAR_COMMAND "CLEAR"
-
-
+#define CLEAR_COMMAND "CLEAR"
+#define SCROLL_LEFT_COMMAND "SCROLL_LEFT"
+#define SCROLL_RIGHT_COMMAND "SCROLL_RIGHT"
 
 /* Private variables ---------------------------------------------------------*/
 
@@ -53,9 +53,24 @@ static void ProcessCommand(const char* command)
 	    return;
 	}
 
-	if(strcmp(command, REQUEST_HANDLER_CLEAR_COMMAND) == 0)
+	if(strcmp(command, CLEAR_COMMAND) == 0)
 	{
 		DisplayController_Clear();
+		SerialProtocol_SendOK();
+
+		return;
+	}
+
+	if(strcmp(command, SCROLL_LEFT_COMMAND) == 0)
+	{
+		 DisplayController_StartScrollLeft();
+		 SerialProtocol_SendOK();
+
+		 return;
+	}
+	if(strcmp(command, SCROLL_RIGHT_COMMAND) == 0)
+	{
+		DisplayController_StartScrollRight();
 		SerialProtocol_SendOK();
 
 		return;

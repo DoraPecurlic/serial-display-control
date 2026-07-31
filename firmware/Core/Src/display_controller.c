@@ -9,7 +9,7 @@
 #include "ssd1306_fonts.h"
 
 
-void Display_Init(void)
+void DisplayController_Init(void)
 {
 	ssd1306_Init();
 	ssd1306_Fill(Black);
@@ -22,6 +22,7 @@ void DisplayController_ShowText(const char *text)
 	{
 		return;
 	}
+	ssd1306_StopScroll();
 
 	ssd1306_Fill(Black);
 	ssd1306_SetCursor(0U, 0U);
@@ -32,6 +33,16 @@ void DisplayController_ShowText(const char *text)
 
 void DisplayController_Clear(void)
 {
+	ssd1306_StopScroll();
 	ssd1306_Fill(Black);
 	ssd1306_UpdateScreen();
+}
+void DisplayController_StartScrollLeft(void)
+{
+	ssd1306_StartScrollLeft();
+}
+
+void DisplayController_StartScrollRight(void)
+{
+	ssd1306_StartScrollRight();
 }
