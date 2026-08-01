@@ -1,12 +1,12 @@
 # serial-display-control
 
-![STM32F401RE](https://img.shields.io/badge/MCU-STM32F401RE-03234B?style=for-the-badge&logo=stmicroelectronics&logoColor=white)
-![SSD1306 OLED](https://img.shields.io/badge/DISPLAY-SSD1306%20OLED-00AFC8?style=for-the-badge)
-![C](https://img.shields.io/badge/LANGUAGE-C-00599C?style=for-the-badge&logo=c&logoColor=white)
-![Python](https://img.shields.io/badge/LANGUAGE-PYTHON-3776AB?style=for-the-badge&logo=python&logoColor=white)
-![UART](https://img.shields.io/badge/INTERFACE-UART-F97316?style=for-the-badge)
-![I2C](https://img.shields.io/badge/INTERFACE-I2C-8B5CF6?style=for-the-badge)
-![Completed](https://img.shields.io/badge/STATUS-COMPLETED-2EA44F?style=for-the-badge)
+![MCU](https://img.shields.io/badge/MCU-STM32F401RE-0072C6)
+![Display](https://img.shields.io/badge/Display-SSD1306%20OLED-00ACC1)
+![C](https://img.shields.io/badge/Language-C-2EA44F)
+![Python](https://img.shields.io/badge/Language-Python-3776AB)
+![UART](https://img.shields.io/badge/Interface-UART-F97316)
+![I2C](https://img.shields.io/badge/Interface-I2C-8B5CF6)
+![Status](https://img.shields.io/badge/Status-Completed-brightgreen)
 
 A modular desktop-to-embedded application for displaying text and controlling visual effects on an SSD1306 OLED through a Python terminal and UART communication.
 
